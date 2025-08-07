@@ -52,8 +52,26 @@ document.querySelectorAll(".drum")[i].addEventListener("click", function (){
     
     fazerBarulho(this.innerText);
 
+    animarButton (this.innerText);
+
    })};
 
 document.addEventListener("keydown", function(somNaCaixa){
-        fazerBarulho(somNaCaixa.key);    
+        fazerBarulho(somNaCaixa.key);  
+        animarButton(somNaCaixa.key)  
     });
+
+function animarButton (chaveDeMovimento){
+    
+    var ativarMovimento = document.querySelector("." + chaveDeMovimento);
+
+    ativarMovimento.classList.add("pressed")
+
+    setTimeout(function(){
+        ativarMovimento.classList.remove("pressed")}, 300 
+    );
+
+};
+
+
+//
